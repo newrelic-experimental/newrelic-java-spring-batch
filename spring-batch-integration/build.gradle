@@ -1,0 +1,33 @@
+
+// Build.gradle generated for instrumentation module spring-batch-integration
+
+apply plugin: 'java'
+
+dependencies {
+    implementation("org.springframework.batch:spring-batch-integration:4.0.0.RELEASE")
+
+   // New Relic Java Agent dependencies
+   implementation 'com.newrelic.agent.java:newrelic-agent:8.4.0'
+   implementation 'com.newrelic.agent.java:newrelic-api:8.4.0'
+   implementation fileTree(include: ['*.jar'], dir: '../test-lib')
+}
+
+jar {
+  manifest {
+    attributes 'Implementation-Title': 'com.newrelic.instrumentation.labs.spring-batch-integration'
+    attributes 'Implementation-Vendor': 'New Relic Labs'
+    attributes 'Implementation-Vendor-Id': 'com.newrelic.labs'
+    attributes 'Implementation-Version': 1.0
+  }
+}
+
+verifyInstrumentation {
+    passes 'org.springframework.batch:spring-batch-integration:[4.0.0.RELEASE,6.0.0)'
+    excludeRegex '.*M[0-9]'
+    excludeRegex '.*RC[0-9]'
+  // Verifier plugin documentation:
+  // https://github.com/newrelic/newrelic-gradle-verify-instrumentation
+  // Example:
+  // passes 'javax.servlet:servlet-api:[2.2,2.5]'
+  // exclude 'javax.servlet:servlet-api:2.4.public_draft'
+}
