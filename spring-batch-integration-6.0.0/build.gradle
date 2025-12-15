@@ -3,8 +3,10 @@
 
 apply plugin: 'java'
 
+targetCompatibility=JavaVersion.VERSION_17
+
 dependencies {
-    implementation("org.springframework.batch:spring-batch-integration:4.0.0.RELEASE")
+    implementation("org.springframework.batch:spring-batch-integration:6.0.0")
 
    // New Relic Java Agent dependencies
    implementation 'com.newrelic.agent.java:newrelic-agent:8.4.0'
@@ -14,7 +16,7 @@ dependencies {
 
 jar {
   manifest {
-    attributes 'Implementation-Title': 'com.newrelic.instrumentation.labs.spring-batch-integration'
+    attributes 'Implementation-Title': 'com.newrelic.instrumentation.labs.spring-batch-integration-6.0.0'
     attributes 'Implementation-Vendor': 'New Relic Labs'
     attributes 'Implementation-Vendor-Id': 'com.newrelic.labs'
     attributes 'Implementation-Version': 1.0
@@ -22,7 +24,7 @@ jar {
 }
 
 verifyInstrumentation {
-    passes 'org.springframework.batch:spring-batch-integration:[4.0.0.RELEASE,6.0.0)'
+    passesOnly 'org.springframework.batch:spring-batch-integration:[6.0.0,)'
     excludeRegex '.*M[0-9]'
     excludeRegex '.*RC[0-9]'
   // Verifier plugin documentation:
