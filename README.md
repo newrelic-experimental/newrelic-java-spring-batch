@@ -1,24 +1,6 @@
 <a href="https://opensource.newrelic.com/oss-category/#new-relic-experimental"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/newrelic/opensource-website/raw/main/src/images/categories/dark/Experimental.png"><source media="(prefers-color-scheme: light)" srcset="https://github.com/newrelic/opensource-website/raw/main/src/images/categories/Experimental.png"><img alt="New Relic Open Source experimental project banner." src="https://github.com/newrelic/opensource-website/raw/main/src/images/categories/Experimental.png"></picture></a>
 
 
-![GitHub forks](https://img.shields.io/github/forks/newrelic-experimental/java-instrumentation-template?style=social)
-![GitHub stars](https://img.shields.io/github/stars/newrelic-experimental/java-instrumentation-template?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/newrelic-experimental/java-instrumentation-template?style=social)
-
-![GitHub all releases](https://img.shields.io/github/downloads/newrelic-experimental/java-instrumentation-template/total)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/newrelic-experimental/java-instrumentation-template)
-![GitHub last commit](https://img.shields.io/github/last-commit/newrelic-experimental/java-instrumentation-template)
-![GitHub Release Date](https://img.shields.io/github/release-date/newrelic-experimental/java-instrumentation-template)
-
-
-![GitHub issues](https://img.shields.io/github/issues/newrelic-experimental/java-instrumentation-template)
-![GitHub issues closed](https://img.shields.io/github/issues-closed/newrelic-experimental/java-instrumentation-template)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/newrelic-experimental/java-instrumentation-template)
-![GitHub pull requests closed](https://img.shields.io/github/issues-pr-closed/newrelic-experimental/java-instrumentation-template)
-
-<a href="https://opensource.newrelic.com/oss-category/#new-relic-experimental"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/newrelic/opensource-website/raw/main/src/images/categories/dark/Experimental.png"><source media="(prefers-color-scheme: light)" srcset="https://github.com/newrelic/opensource-website/raw/main/src/images/categories/Experimental.png"><img alt="New Relic Open Source experimental project banner." src="https://github.com/newrelic/opensource-website/raw/main/src/images/categories/Experimental.png"></picture></a>
-
-
 ![GitHub forks](https://img.shields.io/github/forks/newrelic-experimental/newrelic-java-spring-batch?style=social)
 ![GitHub stars](https://img.shields.io/github/stars/newrelic-experimental/newrelic-java-spring-batch?style=social)
 ![GitHub watchers](https://img.shields.io/github/watchers/newrelic-experimental/newrelic-java-spring-batch?style=social)
@@ -39,8 +21,10 @@
 
 Provides instrumentation for the Java - Spring Batch implementation.  This extends the instrumentation provided by the Java Agent.   
 
-It provides instrumentation for Flows, Tasklets and muli-threaded.
+It provides instrumentation for Flows, Tasklets and muli-threaded and remote batch operations (Chunk & Partitions)
 
+## Additonal Spring Instrumentation Included    
+In order to acurately and effectively trace batch activities that use multi-threading or remote processing, the instrumentation for Spring Batch includes the instrumentation from [Spring Integration](https://github.com/newrelic-experimental/newrelic-java-spring-integration) and [Spring Async](https://github.com/newrelic-experimental/newrelic-java-spring-async).  Both sets of instrumentation are included in the release so there is no need to include them as well.   
 
 ## Installation
 
