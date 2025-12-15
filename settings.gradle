@@ -1,5 +1,6 @@
 rootProject.name = 'spring-batch-instrumentation'
 include 'spring-batch-custom'
-include 'spring-batch-integration'
+include 'spring-batch-integration-3.0.0'
+include 'spring-batch-integration-6.0.0'
 include 'spring-batch-custom-5.0.0'
 include 'spring-batch-custom-6.0.0'
